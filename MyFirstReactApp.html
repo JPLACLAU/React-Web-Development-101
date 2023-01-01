@@ -12,14 +12,26 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function MyApp() {
+      /*      function MyApp() {
         return <h1>Hello, everyone!</h1>;
       }
 
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
       root.render(<MyApp />);
+*/
+
+      class HelloMessage extends React.Component {
+        render() {
+          return <div>Hello, {this.props.name}!</div>;
+        }
+      }
+      ReactDOM.render(
+        <HelloMessage name="Zsolt" />,
+        document.getElementById("hello-example")
+      );
     </script>
+
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
