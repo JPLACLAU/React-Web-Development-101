@@ -24,15 +24,13 @@
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
 
-      function Coin(props) {
-        return (
-          <tr>
-            <td>{props.name}</td>
-            <td>{props.ticker}</td>
-            <td>{props.price}</td>
-          </tr>
-        );
-      }
+      const Coin = (props) => (
+        <tr>
+          <td>{props.name}</td>
+          <td>{props.ticker}</td>
+          <td>{props.price}</td>
+        </tr>
+      );
 
       /* 
       --
