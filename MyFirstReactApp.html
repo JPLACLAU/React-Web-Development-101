@@ -24,8 +24,22 @@
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
 
-      function Coin(props) {}
+      function Coin(props) {
+        return (
+          <tr>
+            <td>{props.name}</td>
+            <td>{props.ticker}</td>
+            <td>{props.price}</td>
+          </tr>
+        );
+      }
 
+      /* 
+      --
+      "class" is no longer needed as 
+      "function" does its job in react
+      --
+      
       class Coin extends React.Component {
         constructor(props) {
           super(props);
@@ -41,6 +55,7 @@
           );
         }
       }
+      */
 
       root.render(
         <React.Fragment>
