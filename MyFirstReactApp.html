@@ -14,7 +14,23 @@
     <script type="text/babel">
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
+      /*
+      class Coin extends React.Component{
+        constructor(props) {
+            super(props);
+        }
 
+        render() {
+            return (
+                <tr>
+                    <td>${this.props.name}</td>
+                    <td>${this.props.ticker}</td>
+                    <td>${this.props.ticker}</td>
+                <tr/>
+            );
+        }
+      };
+*/
       class HelloMessage extends React.Component {
         render() {
           return (
@@ -34,6 +50,16 @@
         <React.Fragment>
           <HelloMessage name="Everyone...yupi!!" />
           <HelloMessage name="Argentina TriCampeon" />
+          <div class="more-stuff">1</div>
+          <div class="more-stuff">2</div>
+          <div class="more-stuff">3</div>
+          <div class="more-stuff">4</div>
+          <div class="more-stuff">5</div>
+          <div class="more-stuff">6</div>
+          <div class="more-stuff">7</div>
+          <div class="more-stuff">8</div>
+          <div class="more-stuff">9</div>
+          <div class="more-stuff">10</div>
         </React.Fragment>
       );
     </script>
