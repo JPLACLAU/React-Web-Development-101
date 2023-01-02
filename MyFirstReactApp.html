@@ -24,20 +24,20 @@
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
 
-      const Coin = (props) => (
+      const Coin = ({ name, ticker, price }) => (
         <tr>
-          <td>{props.name}</td>
-          <td>{props.ticker}</td>
-          <td>{props.price}</td>
+          <td>{name}</td>
+          <td>{ticker}</td>
+          <td>{price}</td>
         </tr>
       );
 
-      /* 
+      /*
       --
-      "class" is no longer needed as 
+      "class" is no longer needed as
       "function" does its job in react
       --
-      
+
       class Coin extends React.Component {
         constructor(props) {
           super(props);
