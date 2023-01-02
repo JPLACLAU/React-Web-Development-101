@@ -10,56 +10,38 @@
     <!-- Don't use this in production: -->
   </head>
   <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Ticker</th>
+        <th>Price</th>
+      </tr>
+    </table>
     <div id="root"></div>
     <script type="text/babel">
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
-      /*
-      class Coin extends React.Component{
+
+      class Coin extends React.Component {
         constructor(props) {
-            super(props);
+          super(props);
         }
 
         render() {
-            return (
-                <tr>
-                    <td>${this.props.name}</td>
-                    <td>${this.props.ticker}</td>
-                    <td>${this.props.ticker}</td>
-                <tr/>
-            );
-        }
-      };
-*/
-      class HelloMessage extends React.Component {
-        render() {
           return (
-            <div>
-              <label htmlFor="name-field" className="mr-auto">
-                {" "}
-                Name:{" "}
-              </label>
-              <input type="text" id="name-field" />
-              Hello {this.props.name}
-            </div>
+            <tr>
+              <td>${this.props.name}</td>
+              <td>${this.props.ticker}</td>
+              <td>${this.props.ticker}</td>
+            </tr>
           );
         }
       }
 
       root.render(
         <React.Fragment>
-          <HelloMessage name="Everyone...yupi!!" />
-          <HelloMessage name="Argentina TriCampeon" />
-          <div class="more-stuff">1</div>
-          <div class="more-stuff">2</div>
-          <div class="more-stuff">3</div>
-          <div class="more-stuff">4</div>
-          <div class="more-stuff">5</div>
-          <div class="more-stuff">6</div>
-          <div class="more-stuff">7</div>
-          <div class="more-stuff">8</div>
-          <div class="more-stuff">9</div>
-          <div class="more-stuff">10</div>
+          <Coin name="Bitcoin" ticker="BTC" price="$16600.59" />
+          <Coin name="Ethereum" ticker="ETH" price="$1201.48" />
         </React.Fragment>
       );
     </script>
