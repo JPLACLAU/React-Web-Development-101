@@ -1,6 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 
+import React, { Component } from 'react'
+
+export default class Coin extends Component {
+  render() {
+    return (
+      <div>This is a coin. Name: {this.props.name}</div>
+    )
+  }
+}
+
+
 function App() {
   return (
     <div className="App">
