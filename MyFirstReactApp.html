@@ -24,6 +24,10 @@
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
 
+      function Coin {
+
+      }
+
       class Coin extends React.Component {
         constructor(props) {
           super(props);
@@ -32,9 +36,9 @@
         render() {
           return (
             <tr>
-              <td>{this.props.name}</td>
-              <td>{this.props.ticker}</td>
-              <td>{this.props.price}</td>
+              <td>{props.name}</td>
+              <td>{props.ticker}</td>
+              <td>{props.price}</td>
             </tr>
           );
         }
