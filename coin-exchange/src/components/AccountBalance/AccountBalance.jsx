@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./AccountBalance.css";
 
 export default class AccountBalance extends Component {
   render() {
-    return <>$ {this.props.amount}</>;
+    return <section className="AccountBalance">$ {this.props.amount}</section>;
   }
 }
 
