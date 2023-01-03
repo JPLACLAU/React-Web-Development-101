@@ -19,7 +19,7 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          <Coin name="Bitcoin" ticker="BTC" price="$16600.59" />
+          <Coin name="Bitcoin" ticker="BTC" price={16600.59} />
           <Coin name="Ethereum" ticker="ETH" price="$1201.48" />
         </tbody>
       </table>
