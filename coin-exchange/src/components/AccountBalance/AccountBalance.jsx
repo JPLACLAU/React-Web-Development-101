@@ -6,13 +6,15 @@ import styled from "styled-components";
 const Section1 = styled.section`
   border: 1px solid red;
   font-size: 2rem;
+  tex-align: left;
+  padding: 1.5rem 0 1.5rem 5rem;
 `;
 
 export default class AccountBalance extends Component {
   render() {
     return (
       <Section1 /*section className="AccountBalance"*/>
-        $ {this.props.amount}
+        Balance: $ {this.props.amount}
       </Section1>
     );
   }
