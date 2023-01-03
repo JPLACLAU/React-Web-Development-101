@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Coin from "./components/Coin/Coin";
 
 function App() {
   return (
