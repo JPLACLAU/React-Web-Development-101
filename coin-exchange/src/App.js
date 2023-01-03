@@ -1,12 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-let sum = 0;
-
-for (let num of [1, 2, 3, 4, 5]) {
-  sum += num;
-}
-
 function App() {
   return (
     <div className="App">
@@ -22,6 +16,16 @@ function App() {
           Learn React
         </a>
       </header>
+      <table>
+        <Thread>
+          <tr>
+            <th>Name</th>
+            <th>Ticker</th>
+            <th>Price</th>
+          </tr>
+        </Thread>
+        <tbody id="root"></tbody>
+      </table>
     </div>
   );
 }
