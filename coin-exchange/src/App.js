@@ -20,7 +20,9 @@ function App() {
         </thead>
         <tbody>
           <Coin name="Bitcoin" ticker="BTC" price={16600.59} />
-          <Coin name="Ethereum" ticker="ETH" price="$1201.48" />
+          <Coin name="Ethereum" ticker="ETH" price={1201.48} />
+          <Coin name="Tether" ticker="USDT" price={1.0} />
+          <Coin name="Ripple" ticker="XRP" price={0.2} />
         </tbody>
       </table>
     </div>
