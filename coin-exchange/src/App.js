@@ -24,7 +24,10 @@ function App() {
             <th>Price</th>
           </tr>
         </Thread>
-        <tbody id="root"></tbody>
+        <tbody>
+          <Coin name="Bitcoin" ticker="BTC" price="$16600.59" />
+          <Coin name="Ethereum" ticker="ETH" price="$1201.48" />
+        </tbody>
       </table>
     </div>
   );
