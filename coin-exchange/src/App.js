@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
 import Coin from "./components/Coin/Coin";
+import logo from "./logo.svg";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} alt="React-logo" />
         <h1>Coin Exchange </h1>
       </header>
       <table>
