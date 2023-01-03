@@ -3,6 +3,7 @@ import "./App.css";
 import Coin from "./components/Coin/Coin";
 import logo from "./logo.svg";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
+import { uuid } from "uuidv4";
 
 class App extends React.Component {
   constructor(props) {
@@ -30,6 +31,11 @@ class App extends React.Component {
           ticker: "XRP",
           price: "0.2",
         },
+        {
+          name: "BTC Cash",
+          ticker: "BCH",
+          price: "0.01",
+        },
       ],
     };
   }
@@ -52,11 +58,7 @@ class App extends React.Component {
           </thead>
           <tbody>
             {this.state.coinData.map((value) => (
-              <Coin
-                name={value.name}
-                ticker={value.ticker}
-                price={value.price}
-              />
+              <Coin key={value.ticker} {...value} />
             ))}
           </tbody>
         </table>
