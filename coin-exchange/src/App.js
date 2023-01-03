@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="React-logo" />
+        <img src={logo} alt="React logo" className="App-logo" />
         <h1>Coin Exchange </h1>
       </header>
       <table>
