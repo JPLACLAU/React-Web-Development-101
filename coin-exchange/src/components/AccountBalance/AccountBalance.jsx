@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./AccountBalance.css";
+import styled from "styled-components";
 
 export default class AccountBalance extends Component {
   render() {
