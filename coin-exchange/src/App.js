@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Coin from "./components/Coin/Coin";
 import logo from "./logo.svg";
-import AccountBalance from "-/components/AccountBalance/AccountBalance";
+import AccountBalance from "./components/AccountBalance/AccountBalance";
 
 function App() {
   return (
