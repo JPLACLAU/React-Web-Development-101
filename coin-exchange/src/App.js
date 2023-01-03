@@ -9,13 +9,13 @@ function App() {
         <h1>Coin Exchange </h1>
       </header>
       <table>
-        <Thread>
+        <thead>
           <tr>
             <th>Name</th>
             <th>Ticker</th>
             <th>Price</th>
           </tr>
-        </Thread>
+        </thead>
         <tbody>
           <Coin name="Bitcoin" ticker="BTC" price="$16600.59" />
           <Coin name="Ethereum" ticker="ETH" price="$1201.48" />
