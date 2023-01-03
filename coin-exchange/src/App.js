@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Coin Exchange {sum}</h1>
+        <h1>Coin Exchange </h1>
       </header>
       <table>
         <Thread>
