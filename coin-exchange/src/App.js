@@ -39,7 +39,7 @@ class App extends React.Component {
       ],
     };
   }
-
+  // remember to remove the header and put it ina block
   render() {
     return (
       <div className="App">
