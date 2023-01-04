@@ -5,10 +5,6 @@ import PropTypes from "prop-types";
 export default class Coin extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      price: this.props.price,
-    };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
@@ -27,7 +23,7 @@ export default class Coin extends Component {
       <tr className="coin-row">
         <td>{this.props.name}</td>
         <td>{this.props.ticker}</td>
-        <td>${this.state.price}</td>
+        <td>${this.props.price}</td>
         <td>
           <form action="#" method="POST">
             <button onClick={this.handleClick}>Refresh</button>
