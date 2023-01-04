@@ -38,7 +38,9 @@ class App extends React.Component {
         },
       ],
     };
+    this.handleRefresh = this.handleRefresh.bind(this);
   }
+  handleRefresh() {}
   /*
   remember to remove the header and put it in a block
   */
