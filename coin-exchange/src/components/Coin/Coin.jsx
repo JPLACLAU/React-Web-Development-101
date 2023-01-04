@@ -11,13 +11,17 @@ export default class Coin extends Component {
     //    prevent the default action of submittting the form
     event.preventDefault();
 
+    this.props.handleRefresh();
+    /*
     const randomPercentage = 0.995 + Math.random() * 0.01;
     this.setState(function (oldState) {
       return {
         price: oldState.price * randomPercentage,
       };
     });
+  */
   }
+
   render() {
     return (
       <tr className="coin-row">
