@@ -1,5 +1,6 @@
 import React from "react";
 import CoinList from "./components/CoinList/CoinList";
+import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
 import { uuid } from "uuidv4";
 import styled from "styled-components";
@@ -52,6 +53,7 @@ class App extends React.Component {
   render() {
     return (
       <Div>
+        <ExchangeHeader />
         <AccountBalance amount={10000} />
         <CoinList coinData={this.state.coinData} />
       </Div>
