@@ -51,12 +51,13 @@ class App extends React.Component {
       let newPrice = price;
       if (valueChangeTicker === ticker) {
         const randomPercentage = 0.0995 + Math.random() * 0.01;
-        this.setState(function (oldState) {
-          return {
-            price: oldState.price * randomPercentage,
-          };
-        });
+        newPrice = newPrice * randomPercentage;
       }
+      return {
+        ticker,
+        name,
+        price: newPrice,
+      };
     });
     console.log(coin);
   }
