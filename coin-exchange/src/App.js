@@ -47,7 +47,7 @@ class App extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
   handleRefresh(valueChangeTicker) {
-    const newcoinData = this.state.coinData.map(function ({
+    const newCoinData = this.state.coinData.map(function ({
       ticker,
       name,
       price,
@@ -65,9 +65,7 @@ class App extends React.Component {
     });
     this.setState({ coinData: newCoinData });
   }
-  /*
-  remember to remove the header and put it in a block
-  */
+
   render() {
     return (
       <Div>
