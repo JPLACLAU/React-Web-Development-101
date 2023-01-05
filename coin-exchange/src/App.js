@@ -47,7 +47,11 @@ class App extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
   handleRefresh(valueChangeTicker) {
-    const coin = this.state.coinData.map(function ({ ticker, name, price }) {
+    const newcoinData = this.state.coinData.map(function ({
+      ticker,
+      name,
+      price,
+    }) {
       let newPrice = price;
       if (valueChangeTicker === ticker) {
         const randomPercentage = 0.0995 + Math.random() * 0.01;
@@ -59,7 +63,7 @@ class App extends React.Component {
         price: newPrice,
       };
     });
-    console.log(coin);
+    this.setState({ coinData: newCoinData });
   }
   /*
   remember to remove the header and put it in a block
