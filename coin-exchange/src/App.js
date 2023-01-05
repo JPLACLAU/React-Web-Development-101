@@ -47,7 +47,17 @@ class App extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
   handleRefresh(valueChangeTicker) {
-    this.state.coinData.find(({ ticker }) => ticker === valueChangeTicker);
+    const coin = this.state.coinData.map(function ({ ticker, name, price }) {
+      let newPrice = price;
+      if (valueChangeTicker === ticker) {
+        const randomPercentage = 0.0995 + Math.random() * 0.01;
+        this.setState(function (oldState) {
+          return {
+            price: oldState.price * randomPercentage,
+          };
+        });
+      }
+    });
     console.log(coin);
   }
   /*
@@ -58,7 +68,10 @@ class App extends React.Component {
       <Div>
         <ExchangeHeader />
         <AccountBalance amount={10000} />
-        <CoinList coinData={this.state.coinData} />
+        <CoinList
+          coinData={this.state.coinData}
+          handleRefresh={this.handleRefresh}
+        />
       </Div>
     );
   }
