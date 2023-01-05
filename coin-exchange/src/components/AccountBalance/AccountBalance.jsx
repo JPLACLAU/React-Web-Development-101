@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-//import "./AccountBalance.css";
 import styled from "styled-components";
 
 const Section1 = styled.section`
@@ -11,11 +10,7 @@ const Section1 = styled.section`
 
 export default class AccountBalance extends Component {
   render() {
-    return (
-      <Section1 /*section className="AccountBalance"*/>
-        Balance: $ {this.props.amount}
-      </Section1>
-    );
+    return <Section1>Balance: $ {this.props.amount}</Section1>;
   }
 }
 
