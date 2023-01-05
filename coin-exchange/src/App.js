@@ -46,7 +46,10 @@ class App extends React.Component {
     };
     this.handleRefresh = this.handleRefresh.bind(this);
   }
-  handleRefresh(ticker) {}
+  handleRefresh(valueChangeTicker) {
+    this.state.coinData.find(({ ticker }) => ticker === valueChangeTicker);
+    console.log(coin);
+  }
   /*
   remember to remove the header and put it in a block
   */
