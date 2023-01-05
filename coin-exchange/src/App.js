@@ -46,7 +46,7 @@ class App extends React.Component {
     };
     this.handleRefresh = this.handleRefresh.bind(this);
   }
-  handleRefresh() {}
+  handleRefresh(ticker) {}
   /*
   remember to remove the header and put it in a block
   */
