@@ -1,9 +1,14 @@
 import React from "react";
-import "./App.css";
 import CoinList from "./components/CoinList/CoinList";
-import logo from "./logo.svg";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
 import { uuid } from "uuidv4";
+import styled from "styled-components";
+
+const Div = styled.div`
+  text-align: center;
+  background-color: #152c5c;
+  color: #cccccc;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -46,14 +51,10 @@ class App extends React.Component {
   */
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} alt="React logo" className="App-logo" />
-          <h1 className="App-title"> Coin Exchange </h1>
-        </header>
+      <Div>
         <AccountBalance amount={10000} />
         <CoinList coinData={this.state.coinData} />
-      </div>
+      </Div>
     );
   }
 }
