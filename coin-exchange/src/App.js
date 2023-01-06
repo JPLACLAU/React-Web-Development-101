@@ -49,7 +49,6 @@ class App extends React.Component {
     ],
   };
 
-  }
   handleBalanceVisibilityChance = () => {
     this.setState(function (oldState) {
       return {
@@ -57,7 +56,7 @@ class App extends React.Component {
         showBalance: !oldState.showBalance,
       };
     });
-  }
+  };
   handleRefresh = (valueChangeTicker) => {
     const newCoinData = this.state.coinData.map(function ({
       ticker,
@@ -78,7 +77,7 @@ class App extends React.Component {
       };
     });
     this.setState({ coinData: newCoinData });
-  }
+  };
 
   render() {
     return (
@@ -97,6 +96,6 @@ class App extends React.Component {
       </Div>
     );
   }
-
+}
 
 export default App;
