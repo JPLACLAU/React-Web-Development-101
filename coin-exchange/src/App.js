@@ -95,6 +95,7 @@ class App extends React.Component {
         />
         <CoinList
           coinData={this.state.coinData}
+          showBalance={this.state.showBalance}
           handleRefresh={this.handleRefresh}
         />
       </Div>
