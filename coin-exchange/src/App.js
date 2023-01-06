@@ -57,7 +57,7 @@ class App extends React.Component {
       .get("https://api.coinpaprika.com/v1/coins")
 
       .then((response) => {
-        let coinList = response.data.slice(0, COIN_COUNT).map(function (coin) {
+        let coinData = response.data.slice(0, COIN_COUNT).map(function (coin) {
           return {
             key: coin.id,
             name: coin.name,
@@ -66,11 +66,6 @@ class App extends React.Component {
             price: "-",
           };
         });
-        for (let i = 0; i < 5; ++i) {
-          const coin = coins[i];
-          console.log(`<li>${coin.name}: ${coin.symbol}</li>`);
-        }
-        node.innerHTML = `<ol>${text.join("")} </ol>`;
       });
   };
   componentDiduPDATE = () => {
