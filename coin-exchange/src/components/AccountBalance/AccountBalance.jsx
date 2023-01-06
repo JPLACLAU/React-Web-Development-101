@@ -14,7 +14,7 @@ export default class AccountBalance extends Component {
     return (
       <Section1>
         Balance: $ {this.props.amount}
-        <button></button>
+        <button>{buttonText}</button>
       </Section1>
     );
   }
