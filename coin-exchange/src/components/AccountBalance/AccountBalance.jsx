@@ -10,7 +10,13 @@ const Section1 = styled.section`
 
 export default class AccountBalance extends Component {
   render() {
-    return <Section1>Balance: $ {this.props.amount}</Section1>;
+    const buttonText = this.props.showBalance ? "Hide Balance" : "Show Balance";
+    return (
+      <Section1>
+        Balance: $ {this.props.amount}
+        <button></button>
+      </Section1>
+    );
   }
 }
 
