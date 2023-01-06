@@ -19,38 +19,38 @@ class App extends React.Component {
       {
         name: "Bitcoin",
         ticker: "BTC",
-        balance: "0.5",
-        price: "16600.59",
+        balance: 0.5,
+        price: 16600.59,
       },
       {
         name: "Ethereum",
         ticker: "ETH",
-        balance: "1.5",
-        price: "1201.48",
+        balance: 1.5,
+        price: 1201.48,
       },
       {
         name: "Tether",
         ticker: "USDT",
-        balance: "500",
-        price: "1.0",
+        balance: 500,
+        price: 1.0,
       },
       {
         name: "Ripple",
         ticker: "XRP",
-        balance: "0",
-        price: "0.2",
+        balance: 0,
+        price: 0.2,
       },
       {
         name: "BTC Cash",
         ticker: "BCH",
-        balance: "0",
-        price: "0.01",
+        balance: 0,
+        price: 0.01,
       },
     ],
   };
 
   }
-  handleBalanceVisibilityChance() => {
+  handleBalanceVisibilityChance = () => {
     this.setState(function (oldState) {
       return {
         ...oldState,
@@ -58,7 +58,7 @@ class App extends React.Component {
       };
     });
   }
-  handleRefresh(valueChangeTicker) => {
+  handleRefresh = (valueChangeTicker) => {
     const newCoinData = this.state.coinData.map(function ({
       ticker,
       name,
@@ -97,6 +97,6 @@ class App extends React.Component {
       </Div>
     );
   }
-}
+
 
 export default App;
