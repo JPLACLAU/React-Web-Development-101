@@ -66,7 +66,13 @@ class App extends React.Component {
             price: "-",
           };
         });
+        console.log("Setting the State...");
+
+        this.setState({ coinData });
+        console.log("Done setting the state");
       });
+    console.log("ComponentDidMount is DONE");
+    debugger;
   };
   componentDiduPDATE = () => {
     console.log("UPDATE");
