@@ -48,7 +48,12 @@ class App extends React.Component {
       },
     ],
   };
-
+  componentDidMount = () => {
+    console.log("COMPONENT DID MOUNT");
+  };
+  componentDiduPDATE = () => {
+    console.log("UPDATE");
+  };
   handleBalanceVisibilityChance = () => {
     this.setState(function (oldState) {
       return {
