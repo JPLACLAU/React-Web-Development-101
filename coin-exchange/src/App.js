@@ -12,12 +12,14 @@ const Div = styled.div`
   color: #cccccc;
 `;
 
+const COIN_COUNT = 10;
+
 class App extends React.Component {
   state = {
     balance: 10000,
     showBalance: true,
     coinData: [
-      {
+      /*      {
         name: "Bitcoin",
         ticker: "BTC",
         balance: 0.5,
@@ -47,6 +49,7 @@ class App extends React.Component {
         balance: 0,
         price: 0.01,
       },
+    */
     ],
   };
   componentDidMount = () => {
@@ -54,7 +57,15 @@ class App extends React.Component {
       .get("https://api.coinpaprika.com/v1/coins")
 
       .then((response) => {
-        const coins = response.data;
+        let coinList = response.data.slice(0, COIN_COUNT).map(function (coin) {
+          return {
+            key: coin.id,
+            name: coin.name,
+            ticker: coin.symbol,
+            balance: "-",
+            price: "-",
+          };
+        });
         for (let i = 0; i < 5; ++i) {
           const coin = coins[i];
           console.log(`<li>${coin.name}: ${coin.symbol}</li>`);
