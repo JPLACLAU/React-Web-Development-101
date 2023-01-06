@@ -4,6 +4,7 @@ import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
 import { uuid } from "uuidv4";
 import styled from "styled-components";
+import axios from "axios";
 
 const Div = styled.div`
   text-align: center;
@@ -49,7 +50,17 @@ class App extends React.Component {
     ],
   };
   componentDidMount = () => {
-    console.log("COMPONENT DID MOUNT");
+    axios
+      .get("https://api.coinpaprika.com/v1/coins")
+
+      .then((response) => {
+        const coins = response.data;
+        for (let i = 0; i < 5; ++i) {
+          const coin = coins[i];
+          console.log(`<li>${coin.name}: ${coin.symbol}</li>`);
+        }
+        node.innerHTML = `<ol>${text.join("")} </ol>`;
+      });
   };
   componentDiduPDATE = () => {
     console.log("UPDATE");
