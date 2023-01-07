@@ -53,11 +53,11 @@ class App extends React.Component {
     const response = await axios.get(ticketURL);
     const newPrice = formatPrice(response.data.quotes.USD.price);
     const newCoinData = this.state.coinData.map(function (values) {
-      let NewValues = { ...values };
+      let newValues = { ...values };
       if (valueChangeId === values.key) {
-        NewValues.price = newPrice;
+        newValues.price = newPrice;
       }
-      return NewValues;
+      return newValues;
     });
     this.setState({ coinData: newCoinData });
   };
