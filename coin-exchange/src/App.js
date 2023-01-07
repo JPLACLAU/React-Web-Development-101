@@ -57,6 +57,7 @@ class App extends React.Component {
       .get("https://api.coinpaprika.com/v1/coins")
 
       .then((response) => {
+        debugger;
         let coinData = response.data.slice(0, COIN_COUNT).map(function (coin) {
           return {
             key: coin.id,
