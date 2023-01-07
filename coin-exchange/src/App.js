@@ -18,39 +18,7 @@ class App extends React.Component {
   state = {
     balance: 10000,
     showBalance: true,
-    coinData: [
-      /*      {
-        name: "Bitcoin",
-        ticker: "BTC",
-        balance: 0.5,
-        price: 16600.59,
-      },
-      {
-        name: "Ethereum",
-        ticker: "ETH",
-        balance: 1.5,
-        price: 1201.48,
-      },
-      {
-        name: "Tether",
-        ticker: "USDT",
-        balance: 500,
-        price: 1.0,
-      },
-      {
-        name: "Ripple",
-        ticker: "XRP",
-        balance: 0,
-        price: 0.2,
-      },
-      {
-        name: "BTC Cash",
-        ticker: "BCH",
-        balance: 0,
-        price: 0.01,
-      },
-    */
-    ],
+    coinData: [],
   };
   componentDidMount = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
