@@ -52,12 +52,11 @@ class App extends React.Component {
     */
     ],
   };
-  componentDidMount = () => {
-    axios
+  componentDidMount = async () => {
+    let response = await axios
       .get("https://api.coinpaprika.com/v1/coins")
 
       .then((response) => {
-        debugger;
         let coinData = response.data.slice(0, COIN_COUNT).map(function (coin) {
           return {
             key: coin.id,
@@ -67,13 +66,9 @@ class App extends React.Component {
             price: 0,
           };
         });
-        console.log("Setting the State...");
 
         this.setState({ coinData });
-        console.log("Done setting the state");
       });
-    console.log("ComponentDidMount is DONE");
-    debugger;
   };
   componentDiduPDATE = () => {
     console.log("UPDATE");
