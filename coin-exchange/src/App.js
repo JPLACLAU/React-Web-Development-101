@@ -53,26 +53,20 @@ class App extends React.Component {
     ],
   };
   componentDidMount = async () => {
-    let response = await axios
-      .get("https://api.coinpaprika.com/v1/coins")
+    let response = await axios.get("https://api.coinpaprika.com/v1/coins");
+    let coinData = response.data.slice(0, COIN_COUNT).map(function (coin) {
+      return {
+        key: coin.id,
+        name: coin.name,
+        ticker: coin.symbol,
+        balance: 0,
+        price: 0,
+      };
+    });
 
-      .then((response) => {
-        let coinData = response.data.slice(0, COIN_COUNT).map(function (coin) {
-          return {
-            key: coin.id,
-            name: coin.name,
-            ticker: coin.symbol,
-            balance: 0,
-            price: 0,
-          };
-        });
+    this.setState({ coinData });
+  };
 
-        this.setState({ coinData });
-      });
-  };
-  componentDiduPDATE = () => {
-    console.log("UPDATE");
-  };
   handleBalanceVisibilityChance = () => {
     this.setState(function (oldState) {
       return {
