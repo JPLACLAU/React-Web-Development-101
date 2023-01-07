@@ -2,7 +2,6 @@ import React from "react";
 import CoinList from "./components/CoinList/CoinList";
 import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
-import TickerRefresher from "./components/TickerRefresher/TickerRefresher";
 import { uuid } from "uuidv4";
 import styled from "styled-components";
 import axios from "axios";
@@ -56,16 +55,17 @@ class App extends React.Component {
   componentDidMount = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
     const coinIds = response.data.slice(0, COIN_COUNT).map((coin) => coin.id);
-    const tickerURL = "https://api.coinpaprika.com/v1/tickers/";
+    const ticketURL = "https://api.coinpaprika.com/v1/tickers/";
     const promises = coinIds.map((id) => axios.get(ticketURL + id));
     const coinData = await Promise.all(promises);
-    const coinPriceData = coinData.map(function (coin) {
+    const coinPriceData = coinData.map(function (response) {
+      const coin = response.data;
       return {
         key: coin.ide,
         name: coin.name,
         ticker: coin.symbol,
         balance: 0,
-        price: coin.quotes["USD"].price,
+        price: coin.quotes.USD.price,
       };
     });
 
@@ -116,7 +116,6 @@ class App extends React.Component {
           showBalance={this.state.showBalance}
           handleRefresh={this.handleRefresh}
         />
-        <TickerRefresher />
       </Div>
     );
   }
