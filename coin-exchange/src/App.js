@@ -65,11 +65,11 @@ class App extends React.Component {
         name: coin.name,
         ticker: coin.symbol,
         balance: 0,
-        price: 0,
+        price: coin.quotes["USD"].price,
       };
     });
 
-    this.setState({ coinData });
+    this.setState({ coinData: coinPriceData });
   };
 
   handleBalanceVisibilityChance = () => {
