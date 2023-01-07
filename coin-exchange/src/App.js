@@ -47,42 +47,16 @@ class App extends React.Component {
       };
     });
   };
-  handleRefresh = async () => {
-    const response = await axios.get("https://api.coinpaprika.com/v1/coins");
-    const coinIds = response.data.slice(0, COIN_COUNT).map((coin) => coin.id);
-    const ticketURL = "https://api.coinpaprika.com/v1/tickers/";
-    const promises = coinIds.map((id) => axios.get(ticketURL + id));
-    const coinData = await Promise.all(promises);
-    const newCoinData = coinData.map(function (response) {
-      const coin = response.data;
-      return {
-        key: coin.id,
-        name: coin.name,
-        ticker: coin.symbol,
-        balance: 0,
-        price: parseFloat(Number(coin.quotes.USD.price).toFixed(4)),
-      };
-    });
-
-    /*this.state.coinData.map(function ({
-      ticker,
-      name,
-      price,
-      balance,
-    }) {
-      let newPrice = price;
-      if (valueChangeTicker === ticker) {
+  handleRefresh = (valueChangeId) => {
+    const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`;
+    const newCoinData = this.state.coinData.map(function (values) {
+      let NewValues = { ...values };
+      if (valueChangeId === values.ticker) {
         const randomPercentage = 0.0995 + Math.random() * 0.01;
         newPrice = newPrice * randomPercentage;
       }
-      return {
-        ticker,
-        name,
-        price: newPrice,
-        balance,
-      };
+      return NewValues;
     });
-*/
     this.setState({ coinData: newCoinData });
   };
 
