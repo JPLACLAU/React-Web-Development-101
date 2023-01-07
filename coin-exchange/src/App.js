@@ -2,6 +2,7 @@ import React from "react";
 import CoinList from "./components/CoinList/CoinList";
 import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
+import TickerRefresher from "./components/TickerRefresher/TickerRefresher";
 import { uuid } from "uuidv4";
 import styled from "styled-components";
 import axios from "axios";
@@ -111,6 +112,7 @@ class App extends React.Component {
           showBalance={this.state.showBalance}
           handleRefresh={this.handleRefresh}
         />
+        <TickerRefresher />
       </Div>
     );
   }
