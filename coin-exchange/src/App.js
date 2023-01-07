@@ -54,11 +54,20 @@ class App extends React.Component {
     ],
   };
   componentDidMount = async () => {
-    let response = await axios.get("https://api.coinpaprika.com/v1/coins");
-    let coinData = response.data.slice(0, COIN_COUNT).map((coin) => coin.key);
+    const response = await axios.get("https://api.coinpaprika.com/v1/coins");
+    const coinIds = response.data.slice(0, COIN_COUNT).map((coin) => coin.id);
     const tickerURL = "https://api.coinpaprika.com/v1/tickers/";
-    const promises = coinData.map((key) => axios.get(ticketURL + key));
-    await Promise.all(promises);
+    const promises = coinIds.map((id) => axios.get(ticketURL + id));
+    const coinData = await Promise.all(promises);
+    const coinPriceData = coinData.map(function (coin) {
+      return {
+        key: coin.ide,
+        name: coin.name,
+        ticker: coin.symbol,
+        balance: 0,
+        price: 0,
+      };
+    });
 
     this.setState({ coinData });
   };
