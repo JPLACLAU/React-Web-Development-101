@@ -57,7 +57,7 @@ class App extends React.Component {
     let response = await axios.get("https://api.coinpaprika.com/v1/coins");
     let coinData = response.data.slice(0, COIN_COUNT).map((coin) => coin.key);
     const tickerURL = "https://api.coinpaprika.com/v1/tickers/";
-    const promises = coinData.map(({ key }) => axios.get(ticketURL + key));
+    const promises = coinData.map((key) => axios.get(ticketURL + key));
     await Promise.all(promises);
 
     this.setState({ coinData });
