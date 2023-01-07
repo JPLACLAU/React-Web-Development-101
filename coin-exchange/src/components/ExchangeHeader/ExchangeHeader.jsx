@@ -26,7 +26,7 @@ export default class ExchangeHeader extends Component {
     return (
       <Header>
         <Img src={logo} alt="React logo" />
-        <Title> Coin Exchange </Title>
+        <Title> Chompo's Coin Exchange </Title>
       </Header>
     );
   }

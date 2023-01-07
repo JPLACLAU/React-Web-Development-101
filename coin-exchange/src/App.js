@@ -33,7 +33,7 @@ class App extends React.Component {
         name: coin.name,
         ticker: coin.symbol,
         balance: 0,
-        price: coin.quotes.USD.price,
+        price: parseFloat(Number(coin.quotes.USD.price).toFixed(4)),
       };
     });
 
