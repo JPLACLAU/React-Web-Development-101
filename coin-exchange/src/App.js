@@ -54,7 +54,7 @@ class App extends React.Component {
     const newPrice = formatPrice(response.data.quotes.USD.price);
     const newCoinData = this.state.coinData.map(function (values) {
       let NewValues = { ...values };
-      if (valueChangeId === values.ticker) {
+      if (valueChangeId === values.key) {
         NewValues.price = newPrice;
       }
       return NewValues;
