@@ -62,8 +62,8 @@ class App extends React.Component {
             key: coin.id,
             name: coin.name,
             ticker: coin.symbol,
-            balance: "-",
-            price: "-",
+            balance: 0,
+            price: 0,
           };
         });
         console.log("Setting the State...");
