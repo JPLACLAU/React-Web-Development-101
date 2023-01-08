@@ -49,7 +49,7 @@ class App extends React.Component {
     });
   };
   handleRefresh = async (valueChangeId) => {
-    const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`;
+    const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}/`;
     const response = await axios.get(ticketURL);
     const newPrice = formatPrice(response.data.quotes.USD.price);
     const newCoinData = this.state.coinData.map(function (values) {
