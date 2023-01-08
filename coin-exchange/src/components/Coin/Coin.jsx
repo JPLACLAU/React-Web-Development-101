@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -11,7 +11,7 @@ export default function Coin(props) {
   const handleClick = (event) => {
     event.preventDefault();
 
-    this.props.handleRefresh(this.props.tickerId);
+    props.handleRefresh(props.tickerId);
   };
 
   return (
