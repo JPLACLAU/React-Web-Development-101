@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import CoinList from "./components/CoinList/CoinList";
 import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
@@ -15,15 +15,11 @@ const COIN_COUNT = 10;
 const formatPrice = (price) => parseFloat(Number(price).toFixed(4));
 
 function App(props) {
-
-
   const [balance, setBalance] = useState(10000);
   const [showBalance, setShowBalance] = useState(true);
   const [coinData, setCoinData] = useState([]);
 
-
-
-  componentDidMount = async () => {
+  const componentDidMount = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
     const coinIds = response.data.slice(0, COIN_COUNT).map((coin) => coin.id);
     const ticketURL = "https://api.coinpaprika.com/v1/tickers/";
@@ -43,10 +39,10 @@ function App(props) {
     setCoinData(coinPriceData);
   };
 
-  handleBalanceVisibilityChance = () => {
-    setShowBalance(oldValue => !oldValue);
+  const handleBalanceVisibilityChance = () => {
+    setShowBalance((oldValue) => !oldValue);
   };
-  handleRefresh = async (valueChangeId) => {
+  const handleRefresh = async (valueChangeId) => {
     const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}/`;
     const response = await axios.get(ticketURL);
     const newPrice = formatPrice(response.data.quotes.USD.price);
@@ -60,23 +56,21 @@ function App(props) {
     setCoinData(newCoinData);
   };
 
-  render() {
-    return (
-      <Div>
-        <ExchangeHeader />
-        <AccountBalance
-          amount={balance}
-          showBalance={showBalance}
-          handleBalanceVisibilityChance={this.handleBalanceVisibilityChance}
-        />
-        <CoinList
-          coinData={coinData}
-          showBalance={showBalance}
-          handleRefresh={this.handleRefresh}
-        />
-      </Div>
-    );
-  }
+  return (
+    <Div>
+      <ExchangeHeader />
+      <AccountBalance
+        amount={balance}
+        showBalance={showBalance}
+        handleBalanceVisibilityChance={handleBalanceVisibilityChance}
+      />
+      <CoinList
+        coinData={coinData}
+        showBalance={showBalance}
+        handleRefresh={handleRefresh}
+      />
+    </Div>
+  );
 }
 
 export default App;
