@@ -61,7 +61,7 @@ function App(props) {
       }
       return newValues;
     });
-    this.setState({ coinData: newCoinData });
+    setCoinData(newCoinData);
   };
 
   render() {
