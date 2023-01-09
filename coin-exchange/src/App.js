@@ -14,7 +14,7 @@ const Div = styled.div`
 const COIN_COUNT = 10;
 const formatPrice = (price) => parseFloat(Number(price).toFixed(4));
 
-class App extends React.Component {
+function App(props) {
   state = {
     balance: 10000,
     showBalance: true,
