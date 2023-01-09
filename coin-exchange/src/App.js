@@ -44,22 +44,17 @@ function App(props) {
       };
     });
 
-    this.setState({ coinData: coinPriceData });
+    setCoinData(coinPriceData);
   };
 
   handleBalanceVisibilityChance = () => {
-    this.setState(function (oldState) {
-      return {
-        ...oldState,
-        showBalance: !oldState.showBalance,
-      };
-    });
+    setShowBalance(oldValue => !oldValue);
   };
   handleRefresh = async (valueChangeId) => {
     const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}/`;
     const response = await axios.get(ticketURL);
     const newPrice = formatPrice(response.data.quotes.USD.price);
-    const newCoinData = this.state.coinData.map(function (values) {
+    const newCoinData = coinData.map(function (values) {
       let newValues = { ...values };
       if (valueChangeId === values.key) {
         newValues.price = newPrice;
