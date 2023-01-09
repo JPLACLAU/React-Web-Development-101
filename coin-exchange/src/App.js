@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CoinList from "./components/CoinList/CoinList";
 import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
@@ -18,6 +18,8 @@ function App(props) {
   const [balance, setBalance] = useState(10000);
   const [showBalance, setShowBalance] = useState(true);
   const [coinData, setCoinData] = useState([]);
+
+  useEffect(function () {});
 
   const componentDidMount = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
