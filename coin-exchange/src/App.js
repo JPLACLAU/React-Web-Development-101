@@ -69,13 +69,13 @@ function App(props) {
       <Div>
         <ExchangeHeader />
         <AccountBalance
-          amount={this.state.balance}
-          showBalance={this.state.showBalance}
+          amount={balance}
+          showBalance={showBalance}
           handleBalanceVisibilityChance={this.handleBalanceVisibilityChance}
         />
         <CoinList
-          coinData={this.state.coinData}
-          showBalance={this.state.showBalance}
+          coinData={coinData}
+          showBalance={showBalance}
           handleRefresh={this.handleRefresh}
         />
       </Div>
