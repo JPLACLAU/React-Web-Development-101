@@ -15,11 +15,7 @@ const COIN_COUNT = 10;
 const formatPrice = (price) => parseFloat(Number(price).toFixed(4));
 
 function App(props) {
-  state = {
-    balance: 10000,
-    showBalance: true,
-    coinData: [],
-  };
+
 
   const [balance, setBalance] = useState(10000);
   const [showBalance, setShowBalance] = useState(true);
