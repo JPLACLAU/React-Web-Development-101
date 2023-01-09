@@ -19,7 +19,13 @@ function App(props) {
   const [showBalance, setShowBalance] = useState(true);
   const [coinData, setCoinData] = useState([]);
 
-  useEffect(function () {});
+  useEffect(function () {
+    if (coinData.length === 0) {
+      // component did mount
+    } else {
+      // component did update
+    }
+  });
 
   const componentDidMount = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
