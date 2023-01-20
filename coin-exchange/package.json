@@ -16,7 +16,7 @@
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://jplaclau.github.io/react-web-development-101v2/",
+  "homepage": "https://jplaclau.github.io/react-web-development-101v2/coin-exchange/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
