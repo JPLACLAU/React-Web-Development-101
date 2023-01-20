@@ -6,6 +6,5 @@ For some reason I could not deploy this to github pages.
 
 I solved when having --git git added to this section of the package.json:
 
-> "predeploy": "npm run build",
-
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build --git git"
