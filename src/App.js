@@ -4,6 +4,9 @@ import ExchangeHeader from "./components/ExchangeHeader/ExchangeHeader";
 import AccountBalance from "./components/AccountBalance/AccountBalance";
 import styled from "styled-components";
 import axios from "axios";
+//import "bootstrap/dist/css/bootstrap.min.css";
+import "bootswatch/dist/flatly/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/js/all";
 
 const Div = styled.div`
   text-align: center;
@@ -49,6 +52,43 @@ function App(props) {
   const handleBalanceVisibilityChance = () => {
     setShowBalance((oldValue) => !oldValue);
   };
+
+  const handleBrrr = () => {
+    setBalance((oldBalance) => oldBalance + 1000);
+  };
+
+  const handleBuy = (valueChangeKey) => {
+    const newCoinData = coinData.map((values) => {
+      let newValues = { ...values };
+      if (valueChangeKey === values.key) {
+        if (balance < newValues.price) {
+          alert("You dont have enough balance");
+        } else {
+          newValues.balance += 1;
+          setBalance((balance) => formatPrice((balance -= newValues.price)));
+        }
+      }
+      return newValues;
+    });
+    setCoinData(newCoinData);
+  };
+
+  const handleSell = (valueChangeKey) => {
+    const newCoinData = coinData.map((values) => {
+      let newValues = { ...values };
+      if (valueChangeKey === values.key) {
+        if (newValues.balance <= 0) {
+          alert("You dont have enough balance");
+        } else {
+          newValues.balance -= 1;
+          setBalance((balance) => formatPrice((balance += newValues.price)));
+        }
+      }
+      return newValues;
+    });
+    setCoinData(newCoinData);
+  };
+
   const handleRefresh = async (valueChangeId) => {
     const ticketURL = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}/`;
     const response = await axios.get(ticketURL);
@@ -70,10 +110,13 @@ function App(props) {
         amount={balance}
         showBalance={showBalance}
         handleBalanceVisibilityChance={handleBalanceVisibilityChance}
+        handleBrrr={handleBrrr}
       />
       <CoinList
         coinData={coinData}
         showBalance={showBalance}
+        handleBuy={handleBuy}
+        handleSell={handleSell}
         handleRefresh={handleRefresh}
       />
     </Div>
