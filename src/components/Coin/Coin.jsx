@@ -37,7 +37,7 @@ export default function Coin(props) {
       <Td>{props.name}</Td>
       <Td>{props.ticker}</Td>
       <Td>${props.price}</Td>
-      {props.showBalance ? <Td>${props.balance}</Td> : null}
+      {props.showBalance ? <Td>{props.balance}</Td> : null}
 
       <TdControls>
         <form action="#" method="POST">
